@@ -68,6 +68,36 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 130px 0 60px;
+    }
+
+    input{
+        width: 100%;
+        max-width: 769px;
+        height: 60px;
+        margin-bottom: 25px;
+        padding: 21px;
+        border: 1px solid rgba(120, 177, 89, 0.25);
+        box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
+        border-radius: 12px;
+        font-size: 14px;
+    }
+
+    button{
+        width: 182px;
+        height: 60px;
+        background-color: var(--dark-green);
+        color: #ffffff;
+        font-size: 14px;
+        border: none;
+        border-radius: 12px;
+        margin-top: 36px;
+    }
 `;
 
 export default GlobalStyle;

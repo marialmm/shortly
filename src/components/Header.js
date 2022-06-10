@@ -6,7 +6,7 @@ import logo from "./../assets/images/logo.png";
 
 export default function Header() {
     const token = localStorage.getItem("token");
-    const user = localStorage.getItem("user");
+    const user = JSON.parse(localStorage.getItem("user"));
 
     function signout(){
         console.log("saindo");
