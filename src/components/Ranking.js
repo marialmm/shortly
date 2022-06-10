@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import trophy from "./../assets/images/trophy.png";
+import Header from "./Header";
 
 export default function Ranking() {
     const [ranking, setRanking] = useState([]);
@@ -19,26 +20,29 @@ export default function Ranking() {
     }, []);
 
     return (
-        <Main>
-            <section className="title">
-                <img src={trophy} alt="trophy" />
-                <h2>Ranking</h2>
-            </section>
-            <section className="ranking">
-                {ranking.map((user, i) => {
-                    return (
-                        <p>
-                            <span>
-                                {i + 1}. {user.name}
-                            </span>{" "}
-                            - {user.linksCount} links - {user.visitCount}{" "}
-                            visualizações
-                        </p>
-                    );
-                })}
-            </section>
-            {token ? <></> : <p>Crie sua conta para usar nosso serviço!</p>}
-        </Main>
+        <>
+            <Header />
+            <Main>
+                <section className="title">
+                    <img src={trophy} alt="trophy" />
+                    <h2>Ranking</h2>
+                </section>
+                <section className="ranking">
+                    {ranking.map((user, i) => {
+                        return (
+                            <p>
+                                <span>
+                                    {i + 1}. {user.name}
+                                </span>{" "}
+                                - {user.linksCount} links - {user.visitCount}{" "}
+                                visualizações
+                            </p>
+                        );
+                    })}
+                </section>
+                {token ? <></> : <p>Crie sua conta para usar nosso serviço!</p>}
+            </Main>
+        </>
     );
 }
 

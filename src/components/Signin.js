@@ -2,6 +2,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 export default function Signin() {
     const [user, setUser] = useState({
@@ -32,23 +33,26 @@ export default function Signin() {
     }
 
     return (
-        <Form onSubmit={signin}>
-            <input
-                type="email"
-                placeholder="E-mail"
-                value={user.email}
-                onChange={(e) => setUser({ ...user, email: e.target.value })}
-                required
-            />
-            <input
-                type="password"
-                placeholder="Senha"
-                value={user.password}
-                onChange={(e) => setUser({ ...user, password: e.target.value })}
-                required
-            />
-            <button type="submit">Entrar</button>
-        </Form>
+        <>
+            <Header />
+            <Form onSubmit={signin}>
+                <input
+                    type="email"
+                    placeholder="E-mail"
+                    value={user.email}
+                    onChange={(e) => setUser({ ...user, email: e.target.value })}
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    value={user.password}
+                    onChange={(e) => setUser({ ...user, password: e.target.value })}
+                    required
+                />
+                <button type="submit">Entrar</button>
+            </Form>
+        </>
     );
 }
 

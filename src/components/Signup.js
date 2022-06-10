@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 export default function Signup() {
     const [newUser, setNewUser] = useState({
@@ -35,45 +36,48 @@ export default function Signup() {
     }
 
     return (
-        <Form onSubmit={sendNewUser}>
-            <input
-                type="text"
-                placeholder="Nome"
-                value={newUser.name}
-                onChange={(e) =>
-                    setNewUser({ ...newUser, name: e.target.value })
-                }
-                required
-            />
-            <input
-                type="email"
-                placeholder="E-mail"
-                value={newUser.email}
-                onChange={(e) =>
-                    setNewUser({ ...newUser, email: e.target.value })
-                }
-                required
-            />
-            <input
-                type="password"
-                placeholder="Senha"
-                value={newUser.password}
-                onChange={(e) =>
-                    setNewUser({ ...newUser, password: e.target.value })
-                }
-                required
-            />
-            <input
-                type="password"
-                placeholder="Confirmar senha"
-                value={newUser.confirmPassword}
-                onChange={(e) =>
-                    setNewUser({ ...newUser, confirmPassword: e.target.value })
-                }
-                required
-            />
-            <button type="submit">Criar Conta</button>
-        </Form>
+        <>
+            <Header />
+            <Form onSubmit={sendNewUser}>
+                <input
+                    type="text"
+                    placeholder="Nome"
+                    value={newUser.name}
+                    onChange={(e) =>
+                        setNewUser({ ...newUser, name: e.target.value })
+                    }
+                    required
+                />
+                <input
+                    type="email"
+                    placeholder="E-mail"
+                    value={newUser.email}
+                    onChange={(e) =>
+                        setNewUser({ ...newUser, email: e.target.value })
+                    }
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    value={newUser.password}
+                    onChange={(e) =>
+                        setNewUser({ ...newUser, password: e.target.value })
+                    }
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Confirmar senha"
+                    value={newUser.confirmPassword}
+                    onChange={(e) =>
+                        setNewUser({ ...newUser, confirmPassword: e.target.value })
+                    }
+                    required
+                />
+                <button type="submit">Criar Conta</button>
+            </Form>
+        </>
     );
 }
 

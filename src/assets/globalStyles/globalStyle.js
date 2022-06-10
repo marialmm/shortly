@@ -97,6 +97,7 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         border-radius: 12px;
         margin-top: 36px;
+        cursor: pointer;
     }
 `;
 

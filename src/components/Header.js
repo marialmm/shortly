@@ -1,15 +1,26 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import axios from "axios";
 
 import logo from "./../assets/images/logo.png";
-
 
 export default function Header() {
     const token = localStorage.getItem("token");
     const user = JSON.parse(localStorage.getItem("user"));
+    const navigate = useNavigate();
 
     function signout(){
-        console.log("saindo");
+        if(window.confirm("Deseja mesmo sair?")){
+            const config = {
+                headers: { Authorization: `Bearer ${token}` },
+            };
+            const URL = "http://localhost:4000/signout";
+            const promise = axios.delete(URL, config);
+            promise.then(() => {
+                localStorage.clear();
+                navigate("/ranking");
+            })
+        }
     }
 
     return (

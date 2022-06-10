@@ -12,7 +12,6 @@ export default function App() {
         <>
             <BrowserRouter>
                 <GlobalStyle />
-                <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/ranking" element={<Ranking />} />
