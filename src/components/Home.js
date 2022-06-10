@@ -26,7 +26,7 @@ export default function Home() {
     }, []);
 
     function getUserInfo() {
-        const URL = `http://localhost:4000/users/${user.id}`;
+        const URL = `https://shortly-back-end.herokuapp.com/users/${user.id}`;
         const promise = axios.get(URL, config);
         promise.then((response) => {
             setUserInfo(response.data);
@@ -43,7 +43,7 @@ export default function Home() {
 
     function shortenUrl(e) {
         e.preventDefault();
-        const URL = "http://localhost:4000/urls/shorten";
+        const URL = "https://shortly-back-end.herokuapp.com/urls/shorten";
         const body = { url };
         const promise = axios.post(URL, body, config);
         promise.then((response) => {

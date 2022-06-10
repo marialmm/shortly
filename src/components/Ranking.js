@@ -10,11 +10,11 @@ export default function Ranking() {
     const token = localStorage.getItem("token");
 
     useEffect(() => {
-        const URL = "http://localhost:4000/ranking";
+        const URL = "https://shortly-back-end.herokuapp.com/ranking";
         const promise = axios.get(URL);
         promise.then((response) => setRanking(response.data));
         promise.catch((error) => {
-            console.log(error.response.data);
+            console.log(error.response.status);
             window.alert("Não foi possível obter o ranking, tente novamente!");
         });
     }, []);

@@ -13,7 +13,7 @@ export default function Signin() {
 
     function signin(e) {
         e.preventDefault();
-        const URL = "http://localhost:4000/signin";
+        const URL = "https://shortly-back-end.herokuapp.com/signin";
         const promise = axios.post(URL, user);
         promise.then((response) => {
             const token = response.data.token;

@@ -14,7 +14,7 @@ export default function Header() {
             const config = {
                 headers: { Authorization: `Bearer ${token}` },
             };
-            const URL = "http://localhost:4000/signout";
+            const URL = "https://shortly-back-end.herokuapp.com/signout";
             const promise = axios.delete(URL, config);
             promise.then(() => {
                 localStorage.clear();

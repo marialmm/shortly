@@ -21,7 +21,7 @@ export default function Signup() {
             setNewUser({ ...newUser, password: "", confirmPassword: "" });
             return;
         }
-        const URL = "http://localhost:4000/signup";
+        const URL = "https://shortly-back-end.herokuapp.com/signup";
         const promise = axios.post(URL, newUser);
         promise.then(() => navigate("/signin"));
         promise.catch((error) => {
